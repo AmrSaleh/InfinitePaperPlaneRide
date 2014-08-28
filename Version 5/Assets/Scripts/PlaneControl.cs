@@ -449,6 +449,7 @@ public class PlaneControl : MonoBehaviour
 			
 			if ((TimeInt % 10 == 0) && (TimeInt > 0)) {
 				//							Debug.Log ("el mod esht3'al");
+				if(speedPowerScript.isRunning){speedPowerScript.endPowerup();};
 				oldBackGroundSpeed = backGroundScrollScript.Speed;
 				
 				TimeInt = 0;
@@ -458,6 +459,7 @@ public class PlaneControl : MonoBehaviour
 			
 			if (!IsDragon) {
 				if (TimeInt == 0)
+				
 					backGroundScrollScript.Speed = oldBackGroundSpeed;
 				
 				TimeInt ++;
@@ -506,11 +508,11 @@ public class PlaneControl : MonoBehaviour
 		
 		
 		//			InitialEnemySpeed += 5;
-		
+
 		GameObject currentDragon;
 		
 		if (IsDragon) {
-			
+
 			backGroundScrollScript.Speed = newBgSpeed;
 			currentDragon = (GameObject)activateDragon.ActivateObject ();
 			if (currentDragon != null) {

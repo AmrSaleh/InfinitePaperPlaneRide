@@ -25,7 +25,7 @@ public class speedPowerUp : MonoBehaviour
 //	private float startTime;
 		private float endTime;
 		public float duration = 5.0f;
-		private bool isRunning = false;
+		public bool isRunning = false;
 		// Use this for initialization
 		private GameObject shield, speed;
 
