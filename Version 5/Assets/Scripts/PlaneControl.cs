@@ -442,6 +442,7 @@ public class PlaneControl : MonoBehaviour
 			
 			GameObject currentBird;
 			//						Debug.Log ("E3mly enemy law sam7t");
+
 			
 			
 			//					Debug.Log("el wa2t="+Time.time);
@@ -558,16 +559,18 @@ public class PlaneControl : MonoBehaviour
 			yield return new WaitForSeconds (3.0f);
 		}		
 	}
-	
+
+	public int cloudSpeed=250;
 	IEnumerator CloudControl ()
 	{
+		cloudSpeed=250;
 		while (true) {
 			GameObject currentCloud;
 			if (!IsDragon) {
 				currentCloud = (GameObject)activateCloud.ActivateObject ();
 				if (currentCloud != null) {
 					currentCloud.transform.position = new Vector2 (10, 4.0f);
-					currentCloud.rigidbody2D.AddForce (new Vector2 (-250, 0));
+					currentCloud.rigidbody2D.AddForce (new Vector2 (-cloudSpeed, 0));
 				}
 			}
 			yield return new WaitForSeconds (3.0f);

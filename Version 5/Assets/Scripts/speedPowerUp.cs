@@ -12,6 +12,7 @@ public class speedPowerUp : MonoBehaviour
 		private int oldEnemiesSpeed, oldCoinSpeed;
 		private int oldBottleSpeed;
 		private int oldDragonSpeed;
+	private int oldCloudSpeed;
 		private float oldCoinSleep;
 		private int oldScoreIncreaseRatio;
 		public int newScoreIncreaseRatio = 3;
@@ -19,6 +20,7 @@ public class speedPowerUp : MonoBehaviour
 		public int newCoinSpeed = 1000;
 		public float newCoinSleep = 0.04f;
 		public int newBottleSpeed = 1000;
+	private int newCloudSpeed=800;
 		public int newDragonSpeed = 500;
 		public float newBgSpeed = 5.0f;
 
@@ -55,6 +57,7 @@ public class speedPowerUp : MonoBehaviour
 				oldDragonSpeed = planeScriptObject.dragonSpeed;
 				oldBottleSpeed = planeScriptObject.powerUpSpeed;
 				oldScoreIncreaseRatio = planeScriptObject.scoreIncreaseRatio;
+		oldCloudSpeed = planeScriptObject.cloudSpeed;
 
 				planeScriptObject.invincible = true;
 				backGroundScrollScript.Speed = newBgSpeed;
@@ -64,6 +67,7 @@ public class speedPowerUp : MonoBehaviour
 				planeScriptObject.dragonSpeed = newDragonSpeed;
 				planeScriptObject.powerUpSpeed = newBottleSpeed;
 				planeScriptObject.scoreIncreaseRatio = newScoreIncreaseRatio;
+		planeScriptObject.cloudSpeed = newCloudSpeed;
 //			makeEffects();
 				endTime = Time.time + duration;
 
@@ -85,6 +89,7 @@ public class speedPowerUp : MonoBehaviour
 				planeScriptObject.dragonSpeed = oldDragonSpeed;
 				planeScriptObject.powerUpSpeed = oldBottleSpeed;
 				planeScriptObject.scoreIncreaseRatio = oldScoreIncreaseRatio;
+		planeScriptObject.cloudSpeed = oldCloudSpeed;
 				
 
 		Debug.Log ("abl el destroy");
