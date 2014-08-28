@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class bulletCollisionScript : MonoBehaviour {
-
-
-//	public GameObject plane;
+	
+	
+	//	public GameObject plane;
 	public PlaneControl testObject; 
 	// Use this for initialization
 	public GameObject hit;
@@ -14,44 +14,44 @@ public class bulletCollisionScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.gameObject.tag == "target") 
 		{
 			other.gameObject.SetActive(false);
-//			Destroy(other.gameObject);
+			//			Destroy(other.gameObject);
 			testObject.score+=10;
-//			testObject.SetScoreText ();
-
+			//			testObject.SetScoreText ();
+			
 			Instantiate(hit,transform.position,transform.rotation);
-//			Destroy(this.gameObject);
+			//			Destroy(this.gameObject);
 			this.gameObject.SetActive(false);
 			
 		}
-
+		
 		if (other.gameObject.tag == "Dragon") 
 		{
 			other.gameObject.SetActive(false);
 			//			Destroy(other.gameObject);
 			testObject.score+=10;
-
+			
 			//			testObject.SetScoreText ();
 			
 			Instantiate(hit,transform.position,transform.rotation);
 			//			Destroy(this.gameObject);
 			this.gameObject.SetActive(false);
 			testObject.IsDragon = false;
-
-
+			
+			testObject.backGroundScrollScript.Speed = testObject.oldBackGroundSpeed;
 			
 		}
-
+		
 		if (other.gameObject.tag == "rightWall") {
-						this.gameObject.SetActive (false);
-
-//			Destroy(this.gameObject);
+			this.gameObject.SetActive (false);
+			
+			//			Destroy(this.gameObject);
 			
 		}
 		if (other.gameObject.tag == "generalWall") {
