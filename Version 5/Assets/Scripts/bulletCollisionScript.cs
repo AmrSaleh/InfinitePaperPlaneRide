@@ -33,7 +33,9 @@ public class bulletCollisionScript : MonoBehaviour {
 		
 		if (other.gameObject.tag == "Dragon") 
 		{
-			other.gameObject.SetActive(false);
+			if(other.gameObject.GetComponent<DragonHealth>().hitDragon()){
+				testObject.IsDragon = false;
+			}
 			//			Destroy(other.gameObject);
 			testObject.score+=10;
 			
@@ -42,7 +44,7 @@ public class bulletCollisionScript : MonoBehaviour {
 			Instantiate(hit,transform.position,transform.rotation);
 			//			Destroy(this.gameObject);
 			this.gameObject.SetActive(false);
-			testObject.IsDragon = false;
+
 			
 			testObject.backGroundScrollScript.Speed = testObject.oldBackGroundSpeed;
 			

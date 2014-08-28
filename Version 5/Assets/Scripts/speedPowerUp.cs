@@ -101,7 +101,7 @@ public class speedPowerUp : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				if (Time.time > endTime && isRunning) {
+				if (Time.time > endTime && isRunning  || planeScriptObject.IsDragon) {
 						endPowerup ();
 				} else if (isRunning) {
 						shield.transform.position = transform.position;
